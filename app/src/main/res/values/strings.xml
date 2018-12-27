@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Precedence</string>
+    <string name="task_hint">Enter a task (Lower # = more important)</string>
+    <string name="send_task">Add</string>
+    <string name="display_list">Show Task List</string>
+    <string name="title_activity_display">DisplayActivity</string>
+
+</resources>
