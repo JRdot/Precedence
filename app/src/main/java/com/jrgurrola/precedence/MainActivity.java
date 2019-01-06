@@ -17,26 +17,25 @@ import java.util.PriorityQueue;
 public class MainActivity extends Activity {
     //Set the values for NumberPicker
     NumberPicker precedenceVals;
-    //Stores the
     PriorityQueue<AbstractMap.SimpleEntry<Integer, String>> taskImportance =
-            new PriorityQueue<>(new SimpleEntryComparator());
+            new PriorityQueue<>(20,new SimpleEntryComparator());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        precedenceVals = (NumberPicker) findViewById(R.id.precedenceValuesPicker);
+        //Set up NumberPicker View Object
+        precedenceVals = findViewById(R.id.precedenceValuesPicker);
         precedenceVals.setMaxValue(25);
         precedenceVals.setMinValue(1);
         precedenceVals.setWrapSelectorWheel(false);
-
     }
 
 
+    //Add a task to our heap
     public void addTask(View view) {
-        EditText taskToDo = (EditText) findViewById(R.id.inputToDo);
-        NumberPicker precedenceInt = (NumberPicker) findViewById(R.id.precedenceValuesPicker);
+        EditText taskToDo = findViewById(R.id.inputToDo);
+        NumberPicker precedenceInt = findViewById(R.id.precedenceValuesPicker);
 
         //Store the task
         String tasky = taskToDo.getText().toString();
